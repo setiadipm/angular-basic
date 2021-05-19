@@ -1,0 +1,4 @@
+<li [ngStyle]="{'color': item.stock < 5 ? 'red': 'black'}">
+  {{ item.name }} (Stock: {{ item.stock }})
+  <button (click)="onDelete()">X</button>
+</li>

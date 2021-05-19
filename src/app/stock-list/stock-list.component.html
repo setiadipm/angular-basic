@@ -1,0 +1,9 @@
+<h2>Stock</h2>
+<app-stock-form (itemAdded)="onAddItem($event)"></app-stock-form>
+<ul>
+  <app-stock-item
+    *ngFor="let item of items"
+    [item]="item"
+    (itemDeleted)="onDeleteItem($event)"
+  ></app-stock-item>
+</ul>
