@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Stock } from '../stock';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-stock-item',
@@ -6,16 +8,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./stock-item.component.css']
 })
 export class StockItemComponent implements OnInit {
-  @Input() item;
-  @Output() itemDeleted = new EventEmitter<any>();
+  @Input() stock: Stock;
 
-  constructor() { }
+  constructor(private stockService: StockService) { }
 
   ngOnInit(): void {
   }
 
   onDelete() {
-    this.itemDeleted.emit(this.item);
+    this.stockService.deleteStock(this.stock);
   }
 
 }

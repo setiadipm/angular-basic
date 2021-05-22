@@ -1,9 +1,13 @@
-<h2>Stock</h2>
-<app-stock-form (itemAdded)="onAddItem($event)"></app-stock-form>
-<ul>
-  <app-stock-item
-    *ngFor="let item of items"
-    [item]="item"
-    (itemDeleted)="onDeleteItem($event)"
-  ></app-stock-item>
-</ul>
+<div class="row">
+  <div class="offset-md-3 col-md-6">
+    <h2>Stock Tracker</h2>
+    <app-stock-form></app-stock-form>
+    <hr>
+    <ul class="list-group">
+      <app-stock-item
+        *ngFor="let stock of stocks | async"
+        [stock]="stock"
+      ></app-stock-item>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div
+  class="row"
+  *ngIf="pokemonDetail | async as detail"
+>
+  <div class="offset-md-3 col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Pokemon - {{ detail.name | titlecase }}</h2>
+      </div>
+    </div>
+    <div
+      class="btn btn-primary mb-3 pointer"
+      (click)="onBack()"
+    >
+      <i class="fa fa-arrow-left mr-3"></i>Back
+    </div>
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center">
+        <img
+          alt="Front"
+          [src]="detail.spriteFront"
+        >
+      </div>
+      <div class="col-md-6 d-flex justify-content-center">
+        <img
+          alt="Front"
+          [src]="detail.spriteBack"
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 my-3">
+        <b>Type :</b> {{ detail.types }}
+      </div>
+    </div>
+  </div>
+</div>
