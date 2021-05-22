@@ -1,4 +1,14 @@
-<li [ngStyle]="{'color': item.stock < 5 ? 'red': 'black'}">
-  {{ item.name }} (Stock: {{ item.stock }})
-  <button (click)="onDelete()">X</button>
+<li
+  class="list-group-item d-flex justify-content-between"
+  [ngStyle]="{'color': stock.qty < 5 ? 'red': 'black'}"
+>
+  <div class="d-flex align-items-center">
+    {{ stock.name }} (Stock: {{ stock.qty }})
+  </div>
+  <button
+    class="btn btn-danger"
+    (click)="onDelete()"
+  >
+    X
+  </button>
 </li>

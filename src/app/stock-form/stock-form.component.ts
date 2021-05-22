@@ -1,4 +1,6 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-stock-form',
@@ -6,26 +8,35 @@ import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '
   styleUrls: ['./stock-form.component.css']
 })
 export class StockFormComponent implements OnInit {
-  @ViewChild('textInput') textInput: ElementRef;
-  @Output() itemAdded = new EventEmitter<any>();
-  name!: string;
-  stock = 0;
+  @ViewChild('nameInput') textInput: ElementRef;
+  form: FormGroup;
+  formSubmitted = false;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,
+    private stockService: StockService) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      name: ['', Validators.required],
+      qty: [0, [Validators.required, Validators.min(0)]]
+    });
+  }
+
+  resetForm() {
+    this.form.reset();
+    this.form.patchValue({
+      qty: 0
+    })
   }
 
   onSubmit(): void {
-    if (this.name != '' && !isNaN(this.stock)) {
-      const newItem = {
-        name: this.name,
-        stock: this.stock
-      };
-      this.itemAdded.emit(newItem);
+    this.formSubmitted = true;
+    if (this.form.valid) {
+      const name = this.form.value['name'];
+      const qty = this.form.value['qty'];
+      this.stockService.addStock(name, qty);
 
-      this.name = '';
-      this.stock = 0;
+      this.resetForm();
       this.textInput.nativeElement.focus();
     }
   }

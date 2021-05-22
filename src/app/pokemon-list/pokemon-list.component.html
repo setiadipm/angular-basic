@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="offset-md-3 col-md-6">
+    <h2>Pokemon Pokedex</h2>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h5 class="m-0">Page {{ page + 1 }}</h5>
+      <div>
+        <button
+          class="btn btn-primary mr-2"
+          (click)="onPrev()"
+        >
+          Prev
+        </button>
+        <button
+          class="btn btn-primary"
+          (click)="onNext()"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div class="list-group">
+      <app-pokemon-item
+        *ngFor="let pokemon of pokemons | async"
+        [pokemon]="pokemon"
+      ></app-pokemon-item>
+    </div>
+  </div>
+</div>

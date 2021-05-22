@@ -1,2 +1,26 @@
-<h1>Stock Tracker</h1>
-<app-stock-list></app-stock-list>
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <span class="navbar-brand">Angular Basic</span>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/"
+        routerLinkActive="active"
+      >
+        Stock
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/pokemon"
+        routerLinkActive="active"
+      >
+        Pokemon
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="container-fluid my-3">
+  <router-outlet></router-outlet>
+</div>
