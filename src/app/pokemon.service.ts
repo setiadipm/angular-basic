@@ -30,12 +30,12 @@ export class PokemonService {
 
   getPokemonDetail(id: number): Observable<PokemonDetail> {
     let pokemon: Pokemon;
-    const pokemonPage = this.pokemons.findIndex(pokemonPage => {
+    const pokemonPage = this.pokemons.find(pokemonPage => {
       pokemon = pokemonPage.pokemons.find(pokemon => pokemon.id == id);
       return pokemon != null;
     });
     if (pokemonPage) {
-      if (pokemon?.detail != null) {
+      if (pokemon?.detail) {
         return of(pokemon.detail);
       }
     }
