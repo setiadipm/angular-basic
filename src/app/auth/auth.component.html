@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="offset-md-3 col-md-6">
+    <ng-container *ngIf="!user; else profile">
+      <app-login></app-login>
+      <div class="d-flex justify-content-center mt-3">
+        or click&nbsp;<a routerLink="/register">here</a>&nbsp;to register
+      </div>
+    </ng-container>
+    <ng-template #profile>
+      <div class="mb-2">
+        Logged in as {{ user.user.email }}
+      </div>
+      <button
+        class="btn btn-primary form-control"
+        (click)="onLogout()"
+      >
+        Logout
+      </button>
+    </ng-template>
+  </div>
+</div>

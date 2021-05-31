@@ -10,6 +10,13 @@ Getting familiar with Angular by practicing with form, binding, sharing informat
 
 Playing around with route and api using Angular http client.
 
+## 3 - Firebase Authentication
+
+Playing with firebase api for register and login using [@angular/fire](https://www.npmjs.com/package/@angular/fire).
+- Create file environment.prod.ts inside `environments` directory,
+- Copy the content from `environment.ts` file, change the `production` to true,
+- Set the `firebaseConfig` from the firebase console.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

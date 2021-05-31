@@ -6,6 +6,7 @@
         class="nav-link"
         routerLink="/"
         routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
       >
         Stock
       </a>
@@ -17,6 +18,15 @@
         routerLinkActive="active"
       >
         Pokemon
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/auth"
+        routerLinkActive="active"
+      >
+        Authentication
       </a>
     </li>
   </ul>
