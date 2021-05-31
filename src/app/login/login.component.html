@@ -1,0 +1,59 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onLogin()"
+>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="text"
+          class="form-control"
+          autofocus
+          #emailInput
+          formControlName="email"
+          [ngClass]="{'is-invalid': form.get('email').invalid && (form.get('email').dirty || formSubmitted)}"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          [ngClass]="{'is-invalid': form.get('password').invalid && (form.get('password').dirty || formSubmitted)}"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div
+        *ngIf="authError"
+        class="error mb-2"
+      >
+        {{ authError }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button
+        type="submit"
+        class="btn btn-primary form-control"
+        *ngIf="!isLoading else loading"
+      >
+        Login
+      </button>
+      <ng-template #loading>
+        <div class="w-100 p-2 d-flex justify-content-center">
+          Loading...
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</form>

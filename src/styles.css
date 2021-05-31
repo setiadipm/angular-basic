@@ -8,3 +8,8 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+.error {
+  font-size: 80%;
+  color: #dc3545;
+}

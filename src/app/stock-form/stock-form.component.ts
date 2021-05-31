@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StockService } from '../stock.service';
 
@@ -7,8 +7,8 @@ import { StockService } from '../stock.service';
   templateUrl: './stock-form.component.html',
   styleUrls: ['./stock-form.component.css']
 })
-export class StockFormComponent implements OnInit {
-  @ViewChild('nameInput') textInput: ElementRef;
+export class StockFormComponent implements OnInit, AfterViewInit {
+  @ViewChild('nameInput') nameInput: ElementRef;
   form: FormGroup;
   formSubmitted = false;
 
@@ -22,7 +22,11 @@ export class StockFormComponent implements OnInit {
     });
   }
 
-  resetForm() {
+  ngAfterViewInit(): void {
+    this.nameInput.nativeElement.focus();
+  }
+
+  resetForm(): void {
     this.form.reset();
     this.form.patchValue({
       qty: 0
@@ -37,7 +41,7 @@ export class StockFormComponent implements OnInit {
       this.stockService.addStock(name, qty);
 
       this.resetForm();
-      this.textInput.nativeElement.focus();
+      this.nameInput.nativeElement.focus();
     }
   }
 
