@@ -17,6 +17,10 @@ Playing with firebase api for register and login using [@angular/fire](https://w
 - Copy the content from `environment.ts` file, change the `production` to true,
 - Set the `firebaseConfig` from the firebase console.
 
+## 4 - Kanban
+
+Playing around with @angular/cdk DragDropModule.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
