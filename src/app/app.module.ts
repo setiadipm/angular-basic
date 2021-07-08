@@ -20,7 +20,7 @@ import { StockListComponent } from './stock-list/stock-list.component';
 
 const routes: Routes = [
   { path: '', component: StockListComponent },
-  { path: 'pokemon', loadChildren: () => import('./pokemon-list/pokemon.module').then(m => m.PokemonModule) },
+  { path: 'pokemon', loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule) },
   { path: 'auth', component: AuthComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'kanban', component: KanbanComponent },
