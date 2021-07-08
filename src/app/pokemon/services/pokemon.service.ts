@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pokemon } from './pokemon';
+import { Pokemon } from '../models/pokemon';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-import { PokemonDetail } from './pokemon-detail';
+import { PokemonDetail } from '../models/pokemon-detail';
 
 interface PokemonPage {
   page: number;

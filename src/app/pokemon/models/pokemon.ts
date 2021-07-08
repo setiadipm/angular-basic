@@ -1,4 +1,4 @@
-import { PokemonDetail } from "./pokemon-detail";
+import { PokemonDetail } from './pokemon-detail';
 
 export interface Pokemon {
   id: number;

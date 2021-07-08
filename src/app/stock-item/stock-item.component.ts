@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Stock } from '../stock';
-import { StockService } from '../stock.service';
+
+import { Stock } from '../models/stock';
+import { StockService } from '../services/stock.service';
 
 @Component({
   selector: 'app-stock-item',

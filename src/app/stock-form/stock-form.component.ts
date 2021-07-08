@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { StockService } from '../stock.service';
+
+import { StockService } from '../services/stock.service';
 
 @Component({
   selector: 'app-stock-form',

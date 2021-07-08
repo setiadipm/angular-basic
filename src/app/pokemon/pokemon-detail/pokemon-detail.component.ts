@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PokemonDetail } from '../pokemon-detail';
-import { PokemonService } from '../pokemon.service';
+
+import { PokemonDetail } from '../models/pokemon-detail';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-detail',
