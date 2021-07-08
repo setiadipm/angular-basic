@@ -29,8 +29,17 @@
         Authentication
       </a>
     </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/kanban"
+        routerLinkActive="active"
+      >
+        Kanban
+      </a>
+    </li>
   </ul>
 </nav>
-<div class="container-fluid my-3">
+<div class="container-fluid my-3" style="height: calc(100vh - 56px - 2rem);">
   <router-outlet></router-outlet>
 </div>
