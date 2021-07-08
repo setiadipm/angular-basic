@@ -1,0 +1,80 @@
+<div class="row h-100">
+  <div class="col-md-12 h-100">
+    <div
+      cdkDropListGroup
+      class="d-flex justify-content-between w-100 h-100"
+    >
+      <div class="d-flex flex-grow-1 flex-column board-column">
+        <div class="title">TO DO</div>
+        <div
+          class="task-container"
+          cdkDropList
+          [cdkDropListData]="todo"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="card task"
+            *ngFor="let todoItem of todo"
+            cdkDrag
+          >
+            {{ todoItem }}
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-grow-1 flex-column board-column">
+        <div class="title">IN PROGRESS</div>
+        <div
+          class="task-container"
+          cdkDropList
+          [cdkDropListData]="progress"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="card task"
+            *ngFor="let progressItem of progress"
+            cdkDrag
+          >
+            {{ progressItem }}
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-grow-1 flex-column board-column">
+        <div class="title">DONE</div>
+        <div
+          class="task-container"
+          cdkDropList
+          [cdkDropListData]="done"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="card task"
+            *ngFor="let doneItem of done"
+            cdkDrag
+          >
+            {{ doneItem }}
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-grow-1 flex-column board-column">
+        <div class="title">RELEASED</div>
+        <div
+          class="task-container"
+          cdkDropList
+          [cdkDropListData]="released"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="card task"
+            *ngFor="let releasedItem of released"
+            cdkDrag
+          >
+            {{ releasedItem }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
