@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pokemon } from '../models/pokemon';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
+
+import { Pokemon } from '../models/pokemon';
 import { PokemonDetail } from '../models/pokemon-detail';
 
 interface PokemonPage {
