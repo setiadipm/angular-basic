@@ -18,4 +18,8 @@ export class StockListComponent implements OnInit {
     this.stocks = this.stockService.getStocks();
   }
 
+  onLog(): void {
+    console.log('Clicked!!!');
+  }
+
 }

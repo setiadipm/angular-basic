@@ -11,6 +11,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
+import { ThrottleClickDirective } from './directives/throttle-click.directive';
 import { KanbanComponent } from './kanban/kanban.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AuthComponent,
+    ThrottleClickDirective,
     KanbanComponent,
     LoginComponent,
     RegisterComponent,
